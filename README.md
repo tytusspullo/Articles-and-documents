@@ -5,10 +5,10 @@ Sometimes cross-platform functionality is not possible due to elements related t
 
 Let's look at something I love: ADO.NET libraries. Since the dawn of time, the most frequently chosen method of operating on a database has been SqlClient, 
 unfortunately the old *System.Data.Sqlclient* is burdened with technological debt, many data types, e.g. the so-called *Spatial Types*, which allow the use 
-of *Geometry* and *Geography* geolocation types, are closely related to SQL Server and windows system. When trying to migrate to NET core and multi-platform, 
+of *SqlGeometry* and *SqlGeography* geolocation types, are closely related to SQL Server and windows system. When trying to migrate to NET core and multi-platform, 
 we will probably want to use a newer version of SqlClient in the *Microsoft.Data.SQLclient* name space. In this case, you should pay attention to 
-whether a given version of MDS has libraries supporting these types. The set of NuGet packages up to version 5.0.0 did not have this support, 
-only from version 5.0.1 you can start migration when we use these types of data.
+whether a given version of MDS has libraries supporting these types. There is need for *Microsoft.SqlServer.Types.dll* which is missing in older MDS NuGets.
+The set of NuGet packages up to version 5.0.0 did not have this support, only from version 5.0.1 you can start migration when we use these types of data.
 
 
 
